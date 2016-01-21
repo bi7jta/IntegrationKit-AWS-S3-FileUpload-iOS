@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jmh-tx-f62">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="GUk-GB-KdZ">
+            <objects>
+                <viewController id="jmh-tx-f62" customClass="LoginViewController" customModule="AWSImageUpload" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UQw-e3-B38"/>
+                        <viewControllerLayoutGuide type="bottom" id="qRv-fT-Tgo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hlp-qX-Jnu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-IR-wwz">
+                                <rect key="frame" x="120" y="120" width="360" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2n9-DC-AJy">
+                                <rect key="frame" x="120" y="180" width="360" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkN-VQ-n1z">
+                                <rect key="frame" x="277.5" y="260" width="45" height="30"/>
+                                <state key="normal" title="LOGIN"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="jmh-tx-f62" eventType="touchUpInside" id="qzk-1j-3FZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2n9-DC-AJy" firstAttribute="width" secondItem="DOw-IR-wwz" secondAttribute="width" id="4Bl-aQ-XuB"/>
+                            <constraint firstItem="OkN-VQ-n1z" firstAttribute="centerX" secondItem="hlp-qX-Jnu" secondAttribute="centerX" id="At8-i3-klC"/>
+                            <constraint firstItem="2n9-DC-AJy" firstAttribute="leading" secondItem="hlp-qX-Jnu" secondAttribute="leadingMargin" constant="100" id="Iga-sJ-YWo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DOw-IR-wwz" secondAttribute="trailing" constant="100" id="J9l-81-RpG"/>
+                            <constraint firstItem="DOw-IR-wwz" firstAttribute="leading" secondItem="hlp-qX-Jnu" secondAttribute="leadingMargin" constant="100" id="Keg-ad-DOF"/>
+                            <constraint firstItem="DOw-IR-wwz" firstAttribute="top" secondItem="UQw-e3-B38" secondAttribute="bottom" constant="100" id="RI6-XV-dbb"/>
+                            <constraint firstItem="OkN-VQ-n1z" firstAttribute="top" secondItem="2n9-DC-AJy" secondAttribute="bottom" constant="50" id="RPe-1R-5og"/>
+                            <constraint firstItem="2n9-DC-AJy" firstAttribute="top" secondItem="DOw-IR-wwz" secondAttribute="bottom" constant="30" id="vOv-FI-jga"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="DOw-IR-wwz" id="xc2-2K-NdF"/>
+                        <outlet property="passwordTextField" destination="2n9-DC-AJy" id="Jn7-3P-fts"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsY-NG-52y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="194" y="354"/>
+        </scene>
+    </scenes>
+</document>
