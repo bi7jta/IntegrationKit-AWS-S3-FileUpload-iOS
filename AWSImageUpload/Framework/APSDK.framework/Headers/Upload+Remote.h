@@ -98,6 +98,44 @@
 + (NSArray *)exactMatchWithParams:(NSDictionary *)params offset:(NSUInteger)offset limit:(NSUInteger)limit context:(id)context error:(NSError **)error;
 
 /*!
+ @method updateLinksError:
+ @abstract Fetches objects matching query scope "update_links" from remote server.
+ @param error Error that has occured while executing the request, if any.
+ @result Array of objects.
+ */
++ (NSArray *)updateLinksError:(NSError **)error;
+
+/*!
+ @method updateLinksWithContext:error:
+ @abstract Fetches objects matching query scope "update_links" from remote server.
+ @param context Object instance or NSDictionary of ‘string’ to ‘object instance’ mapping for use with interpolation of headers, request URL, or previously defined variable at SDK creation.  For more details on the use of contexts, see the discussion section in @link //apple_ref/occ/cat/APObject(Remote) @/link.
+ @param error Error that has occured while executing the request, if any.
+ @result Array of objects.
+ */
++ (NSArray *)updateLinksWithContext:(id)context error:(NSError **)error;
+
+/*!
+ @method updateLinksWithOffset:limit:error:
+ @abstract Fetches objects matching query scope "update_links" from remote server, with pagination.
+ @param offset Number of objects to skip.
+ @param limit Maximum number of objects to fetch.
+ @param error Error that has occured while executing the request, if any.
+ @result Array of objects.
+ */
++ (NSArray *)updateLinksWithOffset:(NSUInteger)offset limit:(NSUInteger)limit error:(NSError **)error;
+
+/*!
+ @method updateLinksWithOffset:limit:context:error:
+ @abstract Fetches objects matching query scope "update_links" from remote server, with pagination.
+ @param offset Number of objects to skip.
+ @param limit Maximum number of objects to fetch.
+ @param context Object instance or NSDictionary of ‘string’ to ‘object instance’ mapping for use with interpolation of headers, request URL, or previously defined variable at SDK creation.  For more details on the use of contexts, see the discussion section in @link //apple_ref/occ/cat/APObject(Remote) @/link.
+ @param error Error that has occured while executing the request, if any.
+ @result Array of objects.
+ */
++ (NSArray *)updateLinksWithOffset:(NSUInteger)offset limit:(NSUInteger)limit context:(id)context error:(NSError **)error;
+
+/*!
  @method countError:
  @abstract Executes aggregate query "count" on remote server.
  @param error Error that has occured while executing the request, if any.
@@ -212,6 +250,44 @@
  @result Array of cached objects.
  */
 + (NSArray *)exactMatchWithParams:(NSDictionary *)params offset:(NSUInteger)offset limit:(NSUInteger)limit context:(id)context async:(APObjectsCallback)callback;
+
+/*!
+ @method updateLinksAsync:
+ @abstract Returns cached objects matching query scope "update_links", then fetches fresh ones from remote server.
+ @param callback Callback to be executed when operation completes.
+ @result Array of cached objects.
+ */
++ (NSArray *)updateLinksAsync:(APObjectsCallback)callback;
+
+/*!
+ @method updateLinksWithContext:async:
+ @abstract Returns cached objects matching query scope "update_links", then fetches fresh ones from remote server.
+ @param context Object instance or NSDictionary of ‘string’ to ‘object instance’ mapping for use with interpolation of headers, request URL, or previously defined variable at SDK creation.  For more details on the use of contexts, see the discussion section in @link //apple_ref/occ/cat/APObject(Remote) @/link.
+ @param callback Callback to be executed when operation completes.
+ @result Array of cached objects.
+ */
++ (NSArray *)updateLinksWithContext:(id)context async:(APObjectsCallback)callback;
+
+/*!
+ @method updateLinksWithOffset:limit:async:
+ @abstract Returns cached objects matching query scope "update_links", then fetches fresh ones from remote server, with pagination.
+ @param offset Number of objects to skip.
+ @param limit Maximum number of objects to fetch.
+ @param callback Callback to be executed when operation completes.
+ @result Array of cached objects.
+ */
++ (NSArray *)updateLinksWithOffset:(NSUInteger)offset limit:(NSUInteger)limit async:(APObjectsCallback)callback;
+
+/*!
+ @method updateLinksWithOffset:limit:context:async:
+ @abstract Returns cached objects matching query scope "update_links", then fetches fresh ones from remote server, with pagination.
+ @param offset Number of objects to skip.
+ @param limit Maximum number of objects to fetch.
+ @param context Object instance or NSDictionary of ‘string’ to ‘object instance’ mapping for use with interpolation of headers, request URL, or previously defined variable at SDK creation.  For more details on the use of contexts, see the discussion section in @link //apple_ref/occ/cat/APObject(Remote) @/link.
+ @param callback Callback to be executed when operation completes.
+ @result Array of cached objects.
+ */
++ (NSArray *)updateLinksWithOffset:(NSUInteger)offset limit:(NSUInteger)limit context:(id)context async:(APObjectsCallback)callback;
 
 /*!
  @method countAsync:

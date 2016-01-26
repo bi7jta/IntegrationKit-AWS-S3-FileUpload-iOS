@@ -36,4 +36,13 @@
  */
 + (NSArray *)exactMatchLocalWithParams:(NSDictionary *)params offset:(NSUInteger)offset limit:(NSUInteger)limit;
 
+/*!
+ @method updateLinksLocalWithOffset:limit:
+ @abstract Fetches objects matching query scope "update_links" from local cache, with pagination.
+ @param offset Number of objects to skip.
+ @param limit Maximum number of objects to fetch.
+ @result Array of objects.
+ */
++ (NSArray *)updateLinksLocalWithOffset:(NSUInteger)offset limit:(NSUInteger)limit;
+
 @end

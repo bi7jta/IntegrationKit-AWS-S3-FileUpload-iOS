@@ -41,10 +41,13 @@ class ItemsListViewController : UIViewController, UITableViewDelegate, UITableVi
 //        presentViewController(picker, animated: true, completion: nil)
 //        
     }
-    
+    var refreshControl:UIRefreshControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
 //        
 //        picker.delegate = self
 //        
@@ -54,7 +57,22 @@ class ItemsListViewController : UIViewController, UITableViewDelegate, UITableVi
 
         
     }
-    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        // Do some reloading of data and update the table view's data source
+        // Fetch more objects from a web service, for example...
+        
+        // Simply adding an object to the data source for this example
+        Upload.updateLinksAsync { (objects, error) -> Void in
+            if(error != nil) {
+                self.showAlertForError("Error occured in fetching upload items");
+                
+            } else {
+                self.dataSource = objects as! [Upload]
+                self.tableView.reloadData();
+            }
+            refreshControl.endRefreshing()
+        }
+    }
     private func getAllUploads() {
         Upload.allAsync { (objects, error) -> Void in
             if(error != nil) {

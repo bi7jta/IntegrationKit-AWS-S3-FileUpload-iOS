@@ -10,8 +10,8 @@ import Foundation
 
 struct Constants {
     
-    static let backend = NSURL(string: "https://immense-mountain-54681.herokuapp.com")!
-    //static let backend = NSURL(string: "http://localhost:1337")!
+    //static let backend = NSURL(string: "https://immense-mountain-54681.herokuapp.com")!
+    static let backend = NSURL(string: "http://localhost:1337")!
     static let version = "api/v1/"
     
     static var baseURL: NSURL? {
